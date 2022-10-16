@@ -1,0 +1,142 @@
+
+html{
+    font-family: 'Kumbh Sans';
+    font-size: 62.5%;
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
+    font-weight: 400;
+}
+body{
+    min-height:100vh;
+    margin: 0px;
+    background: linear-gradient(var(--soft-violet),var(--soft-blue));
+    display:grid;
+    place-content: center;
+}
+*, *::after, *::before { 
+    box-sizing: border-box;
+}
+.image{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-60%);
+    width: 150px;
+}
+.shadow{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 150px;
+}
+.box{
+    display:none;
+    position: absolute;
+    transform: translate(-60px);
+}
+img{
+    line-height: 0;
+}
+h1{
+    margin-top: 80px;
+    font-size: 4.0rem;
+    text-align: center;
+}
+p{
+    max-height: 0px;
+    overflow: hidden;
+    transition: 0.25s;
+    margin: 0;
+    line-height: 1.75rem;
+    color: var(--dark-grayish-blue);
+}
+menu{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+}
+menu:hover{
+    cursor: pointer;
+    color: orangered;
+}
+menu *{
+    align-self: center;
+    transition: transform 0.5s;
+}
+menu > .active{
+    transform: rotate(180deg);
+}
+hr{
+    margin: 20px 0;
+    border-color: var(--light-grayish-blue);
+    opacity: 25%;
+}
+.card{
+    position: relative;
+    margin: 0px 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    font-size: 1.2rem;
+    min-height: 50ch;
+    max-width: 50ch;
+}
+.attribution {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+@media (min-aspect-ratio: 947/721 ) {
+    .card{
+        position: relative;
+        display: flex;
+        padding: 60px 110px;
+        overflow: hidden;
+        max-width: 130ch;
+    }
+    .card-wrapper{
+        position: relative;
+    }
+    h1{
+        text-align: left;
+    }
+    .image, .shadow{
+        position:absolute;
+        left: 0;
+        top: 50%;
+        width: 50%;
+        transform: translate(-17%, -50%); 
+    }
+    .shadow{
+        content: url("./images/bg-pattern-desktop.svg");
+        transform: scale(225%) translate(-35%,-31%);
+    }
+    .image{
+        content: url("./images/illustration-woman-online-desktop.svg");  
+    }
+    .accordiongroup{
+        width: 50%;
+        margin-left: 50%;
+    }
+    .card-wrapper::before{
+        z-index: 5;
+        position: absolute;
+        content: url("./images/illustration-box-desktop.svg");
+        left: -72.5px;
+        top: 50%;
+        transform: translateY(-50px);
+    }
+}
